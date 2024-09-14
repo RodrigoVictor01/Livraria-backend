@@ -32,6 +32,15 @@ Antes de começar, certifique-se de ter os seguintes itens instalados:
     ```bash
     pip install -r requirements.txt
     ```
+    
+    3.1 Como usar o `.env.example`:
+
+    No diretório raiz do projeto, você encontrará o arquivo `.env.example`.
+    Crie uma cópia desse arquivo e renomeie para `.env`:
+   ```bash
+   cp .env.example .env
+   ```
+    
 
 4. **Configure o banco de dados PostgreSQL:**
 
