@@ -21,8 +21,8 @@ Antes de começar, certifique-se de ter os seguintes itens instalados:
 2. **Crie e ative um ambiente virtual:**
 
     ```bash
-    python -m venv env
-    source env/bin/activate  # No Windows, use `env\Scripts\activate`
+    python -m venv venv
+    source venv/bin/activate  # No Windows, use `venv\Scripts\activate`
     ```
 
 3. **Instale as dependências:**
