@@ -1,4 +1,4 @@
-# Projeto Python, Django e PostgreSQL
+# Projeto com Python, Django e PostgreSQL
 
 
 ## Requisitos
