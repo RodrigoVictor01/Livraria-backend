@@ -11,7 +11,7 @@ class Purchase(models.Model):
         return sum(book.list_price * book.quantity for book in self.book_purchases.all())
 
     def __str__(self):
-        return f"Compra {self.id} - Total: {self.total_purchase:.2f}"
+        return f"{self.user.name} - Total: {self.total_purchase()}"
 
     class Meta:
         verbose_name = 'Purchase'
@@ -25,6 +25,9 @@ class BookPurchase(models.Model):
     quantity = models.PositiveIntegerField()
     authors = models.JSONField() 
     list_price = models.DecimalField(max_digits=10, decimal_places=2)
+
+    def __str__(self):
+        return f"{self.title} - {self.quantity} unidades"
 
     class Meta:
         verbose_name = 'Book Purchase'

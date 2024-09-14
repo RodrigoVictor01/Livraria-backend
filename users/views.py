@@ -1,14 +1,13 @@
 from .models import User
-from rest_framework.response import Response
-from rest_framework import status
-from rest_framework.views import APIView
 from .serializers import UserSerializer, LoginSerializer
-from rest_framework import generics
-from django.contrib.auth import get_user_model
-from django.contrib.auth import authenticate
+from rest_framework.response import Response
+from rest_framework import status, generics
+from rest_framework.views import APIView
 from rest_framework.permissions import AllowAny
 from rest_framework_simplejwt.tokens import RefreshToken
-
+from rest_framework.permissions import IsAuthenticated
+from django.contrib.auth import get_user_model
+from django.contrib.auth import authenticate
 
 
 # Cadastra um novo usuário
@@ -44,4 +43,17 @@ class LoginView(generics.GenericAPIView):
         }, status=status.HTTP_200_OK)
     
 
+# Retorna os dados do usuário logado
+class UserDetailView(APIView):
+    permission_classes = [IsAuthenticated]
 
+    def get(self, request):
+        user = request.user
+
+        refresh = RefreshToken.for_user(user)
+        user_data = UserSerializer(user).data
+        return Response({
+            'access': str(refresh.access_token),
+            'refresh': str(refresh),
+            'user': user_data
+        })
