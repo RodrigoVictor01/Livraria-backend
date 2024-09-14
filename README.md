@@ -55,7 +55,7 @@ Antes de começar, certifique-se de ter os seguintes itens instalados:
         No terminal do PostgreSQL, crie um banco de dados:
 
         ```sql
-        CREATE DATABASE livravria_db;
+        CREATE DATABASE livraria_db;
         ```
 
         Saia do `psql`:
@@ -72,7 +72,7 @@ Antes de começar, certifique-se de ter os seguintes itens instalados:
         DATABASES = {
             'default': {
                 'ENGINE': 'django.db.backends.postgresql',
-                'NAME': 'livravria_db',
+                'NAME': 'livraria_db',
                 'USER': 'seu_usuario',
                 'PASSWORD': 'sua_senha',
                 'HOST': 'localhost',
