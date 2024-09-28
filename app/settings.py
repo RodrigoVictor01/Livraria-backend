@@ -110,7 +110,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'livraria_db',
         'USER': 'postgres',
-        'PASSWORD': '773699',
+        'PASSWORD': 'sua_senha',
         'HOST': 'localhost',
         'PORT': '5432',
     }
